@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FhirRag.Core" Version="1.0.0-*" />
+    <PackageReference Include="FhirRag.Core.Abstractions" Version="1.0.0-*" />
+  </ItemGroup>
+
 </Project>
