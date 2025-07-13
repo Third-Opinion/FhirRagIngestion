@@ -43,6 +43,7 @@ jobs:
 
     - name: Add GitHub NuGet source
       run: |
+        dotnet nuget remove source github || true
         dotnet nuget add source https://nuget.pkg.github.com/Third-Opinion/index.json \
           --name github \
           --username ${{ github.actor }} \
@@ -168,6 +169,7 @@ jobs:
 
     - name: Add GitHub NuGet source
       run: |
+        dotnet nuget remove source github || true
         dotnet nuget add source https://nuget.pkg.github.com/Third-Opinion/index.json \
           --name github \
           --username ${{ github.actor }} \
@@ -234,6 +236,7 @@ jobs:
 
     - name: Add GitHub NuGet source
       run: |
+        dotnet nuget remove source github || true
         dotnet nuget add source https://nuget.pkg.github.com/Third-Opinion/index.json \
           --name github \
           --username ${{ github.actor }} \
