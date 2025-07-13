@@ -43,9 +43,9 @@ jobs:
 
     - name: Add GitHub NuGet source
       run: |
-        dotnet nuget remove source github || true
+        dotnet nuget list source | grep -q "github-third-opinion" && dotnet nuget remove source github-third-opinion || true
         dotnet nuget add source https://nuget.pkg.github.com/Third-Opinion/index.json \
-          --name github \
+          --name github-third-opinion \
           --username ${{ github.actor }} \
           --password ${{ secrets.GITHUB_TOKEN }} \
           --store-password-in-clear-text
@@ -169,9 +169,9 @@ jobs:
 
     - name: Add GitHub NuGet source
       run: |
-        dotnet nuget remove source github || true
+        dotnet nuget list source | grep -q "github-third-opinion" && dotnet nuget remove source github-third-opinion || true
         dotnet nuget add source https://nuget.pkg.github.com/Third-Opinion/index.json \
-          --name github \
+          --name github-third-opinion \
           --username ${{ github.actor }} \
           --password ${{ secrets.GITHUB_TOKEN }} \
           --store-password-in-clear-text
@@ -236,9 +236,9 @@ jobs:
 
     - name: Add GitHub NuGet source
       run: |
-        dotnet nuget remove source github || true
+        dotnet nuget list source | grep -q "github-third-opinion" && dotnet nuget remove source github-third-opinion || true
         dotnet nuget add source https://nuget.pkg.github.com/Third-Opinion/index.json \
-          --name github \
+          --name github-third-opinion \
           --username ${{ github.actor }} \
           --password ${{ secrets.GITHUB_TOKEN }} \
           --store-password-in-clear-text
