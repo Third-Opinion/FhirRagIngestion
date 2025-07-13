@@ -224,15 +224,14 @@ dotnet lambda deploy-function --profile your-aws-profile
 ```
 
 ### Infrastructure as Code
+Infrastructure is managed using AWS CDK in the [AppInfraCdkV1](https://github.com/Third-Opinion/AppInfraCdkV1) repository:
+
 ```bash
-# Deploy using AWS SAM or CloudFormation
-aws cloudformation deploy \
-  --template-file infrastructure/ingestion-pipeline.yaml \
-  --stack-name fhir-rag-ingestion \
-  --capabilities CAPABILITY_IAM \
-  --parameter-overrides \
-    Environment=production \
-    TenantId=your-tenant-id
+# Deploy ingestion infrastructure using CDK
+git clone https://github.com/Third-Opinion/AppInfraCdkV1.git
+cd AppInfraCdkV1
+npm install
+cdk deploy FhirRagIngestionStack --context environment=production --context tenantId=your-tenant-id
 ```
 
 ## ⚙️ Configuration
